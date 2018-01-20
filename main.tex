@@ -1,0 +1,169 @@
+%%%%%%%%%%%%%%%%%%%%%%%% VRES LATEX %%%%%%%%%%%%%%%%%%%%%%%
+
+
+% This sets the style of the document, you can use different built in styles, create your own .cls files or download ones from the Internet. This one is fairly standard to use
+\documentclass[18pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This package is handy for captioning figures, you can set caption style here as well
+\usepackage[font={large,it}]{caption}
+\usepackage[a4paper, portrait, margin=0.5in]{geometry}
+% This is important for position images as latex will put your image where it best fits unless you tell it otherwise
+\usepackage{float}
+
+% If you want images this is necessary
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{./images}}
+% You can use this to set your margin size
+%\usepackage[margin=25mm]{geometry}
+
+% Allows you to do things such as headers and footers
+\usepackage{fancyhdr}
+
+% This needs to be in here if you want to set up your document with more than one column in sections 
+\usepackage{multicol}
+
+% Here are a few packages that help with formatting equations, you may not need to use this but I find align* from amsmath particularly useful
+\usepackage{amsmath,amssymb,amsthm,textcomp,amsfonts,amsthm,mathrsfs}
+
+% Enhances Latex's cross referencing
+\usepackage{cleveref}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\hypersetup{linkcolor=blue}
+\usepackage{xcolor}
+\usepackage{physics}
+\usepackage{gensymb}
+\usepackage{mathrsfs}
+% Also not necessary but I find it handy when formatting arrays and matrices
+\usepackage{array}
+\usepackage{xfrac}
+
+%% These packages you'll need to download a .sty file before you can use
+
+% This allows really nice formatting for MATLAB code, it's the main plug in package that I use
+\usepackage[numbered,framed]{mcode}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\hypersetup{linkcolor=blue}
+\usepackage{xcolor}
+\usepackage{physics}
+\usepackage{gensymb}
+
+%% Feel free to add any more packages you want!!!
+\usepackage{indentfirst}
+\usepackage{parskip} 
+\setlength\parindent{0pt}
+%\setlength{\parskip}{1cm plus4mm minus3mm}
+\usepackage{csquotes}
+\usepackage{mathtools}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Setup the document %%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{basicstyle=\scriptsize\ttfamily,breaklines=true}
+\renewcommand{\thesubsection}{\thesection\alph{subsection}.}
+\renewcommand{\thesubsubsection}{\indent \roman{subsubsection}}
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+	\normalfont \normalsize 
+	\textsc{Queensland University of Technology, Vacation Research Experience Scheme} \\ [25pt] 
+	\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+	\huge VI Kitchen Assistant \\ % The assignment title
+	\author{Marat (Matt) Sadykov \small n9312706 \\  Customer receipt number: \small 22705821 \\ \\ Supervised by: \\ Dr. Brown Ross \\ }
+	\date{\normalsize\today} % Today's date or a custom date
+	\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+
+% Headers and footers
+\rhead{VRES}
+\lhead{Marat (Matt) Sadykov}
+\rfoot{Page \thepage}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% Begin the Actual Document %%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\newpage
+\section{Executive Summary}
+\section{Acknowledgements (other's assets)}
+%===================================================%
+%													%
+%===============Project Overview====================%
+%												    %
+%===================================================%
+\section{Introduction}
+\subsection{Project Overview}
+	\large This research project is focused on constructing training environment to perform some basic tasks. In particular, it establish kitchen environment, which will be supervised by Virtual Intelligent (VI)  . Using set of motion detective tools and kitect camera on the top of area, VI will be able to track persons movements, provide cooking advice and follow up environment state to inform of any sort of danger or thing which require user attention or other assistant. This tool is aimed for people with different disabilities, in order to train watch over them self, independent from other guardians. \\
+	
+	\large Virtual assistance was given a name \textit{Evka} - \textit{Enhanced Virtual Kitchen Assistant} \footnote{from a Czech language - Eva}. Her name can be translated as Eva, which will be used in majority cases. Using a hand trackers, tool markers, property or sort of thermal scanners and fridge content she will be able decide the best possible to cook menu, track user activities in order not to harm anyone, track on the state of cooking process with level of heat, time and user actions. \\
+	
+	At current stage Eva is able to communicate with her voice using RTVoice asset. Her responses are generated based on user actions. Original idea was to develop Question-Answer Virtual Intelligent environment. However, after going through limitation of the project, users ability and current level of technologies, idea was postponed to better times. \\
+	
+	As a result, Eva able to use Unity Engine Kitchen environment around, which were marked with a tag to, which type of tool it belongs. Her dialogues stored in a tree hierarchy and changes depending on user actions. In the mean time, player has abilities to manipulate with object using controllers, represented as mouse and keyboard.
+\subsection{Report Aim}
+	Presented how tasks were achieved. Overjeis of API
+\section{Background research}
+	Indeva, doctors . Multicap.
+\section{Methodology}	
+
+	\begin{enumerate}
+		\item Establish Unity on Home Windows Machine with VR support. Find the best method os sharing code with Dr Brown. - Unity 2017.2.0f3
+		\item Use Unity Assert Store to establish sort of kitchen environment. In addition, SketchUp for 3D models. -   Kitchen Asset from HarpetStudio was used, in order to get 3D models kitchen environment.
+		\item Draw VI model and place in the kitchen. Add one of two ways of communication using either text of voice. - Using different speech synthesis, Google translate was used as more appropriate. In addition, WebGL Speech Synthesis may become the best tool.
+		\item Build one work flow hierarchy with Evka's feedback. Add camera view track.
+		\item Set up Evka's track abilities.
+		\item Build easy interactions with enum states as lift pull and collisions.
+		\begin{itemize}
+			\item Knife - Lift, Pull, Cut. Safe state, Danger State.
+			\item Kitchen plate - Cooled, Heating, Hot. Safe state, Danger State.
+			\item Pan/Pot - Empty, filled. Cooled, Hot.
+			\item Spoon - Cooking Tool.
+			\item Glass/Plate/Shell/Fridge - Storage.
+		\end{itemize}
+		\item Give player tho hands - keyboard/mouse.
+		\item Set Cooking ingredients.
+		\begin{itemize}
+			\item Vegetables - Whole, Cutted. Durty, Clean. Old, Fresh.
+			\item Meat - whole, cutted, mean. Frozen, normal.
+			\item Rice - Dry, Cleaned. Empty/ Full.
+			\item Past - Empty/ Full.
+			\item Potatoes - Dry, Cleaned. Empty/ Full.
+			\item Oil - Filled, Empty.
+			\item Butter/Salt/Paper/Seasons - Yes or Null.
+		\end{itemize}
+		\item SetUp Avatar restrains. I.e Do not allow take knife from working area, do not put pasta into empty Pot. \ldots
+		\item To be added \ldots
+		
+	\end{enumerate}
+	
+	
+\section{Conclusion}	
+\section{?Proposal}	
+	
+	
+%===================================================%
+%													%
+%============Bibliography and refferencing==========%
+%												    %
+%===================================================%
+
+\newpage
+\begin{flushleft}
+\bibliographystyle{referencing/IEEEtran}
+\bibliography{referencing/referenceList}
+
+\end{flushleft}
+
+\end{document}
