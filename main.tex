@@ -113,15 +113,16 @@
 	
 	As a result, Eva able to use Unity Engine Kitchen environment around, which were marked with a tag to, which type of tool it belongs. Her dialogues stored in a tree hierarchy and changes depending on user actions. In the mean time, player has abilities to manipulate with object using controllers, represented as mouse and keyboard.
 \subsection{Report Aim}
-	Presented how tasks were achieved. Overjeis of API
+	Presented how tasks were achieved. Overjeis of API. Doxygen doc generator.
+	http://www.jacobpennock.com/Blog/unity-automatic-documentation-generation-an-editor-plugin/
 \section{Background research}
 	Indeva, doctors . Multicap.
 \section{Methodology}	
 
 	\begin{enumerate}
-		\item Establish Unity on Home Windows Machine with VR support. Find the best method os sharing code with Dr Brown. - Unity 2017.2.0f3
-		\item Use Unity Assert Store to establish sort of kitchen environment. In addition, SketchUp for 3D models. -   Kitchen Asset from HarpetStudio was used, in order to get 3D models kitchen environment.
-		\item Draw VI model and place in the kitchen. Add one of two ways of communication using either text of voice. - Using different speech synthesis, Google translate was used as more appropriate. In addition, WebGL Speech Synthesis may become the best tool.
+		\item Establish Unity on Home Windows Machine. Google drive used as source control. - Unity 2017.2.0f3
+		\item Use Unity Assert Store to establish sort of kitchen environment. Kitchen asset and creation kit. MCS Female for body. RT-Voice PRO. Meximio animation. 
+		\item Draw VI model and place in the kitchen. Add one of two ways of communication using either text of voice. Using different speech synthesis, Google translate was used as more appropriate. In addition, WebGL Speech Synthesis may become the best tool.
 		\item Build one work flow hierarchy with Evka's feedback. Add camera view track.
 		\item Set up Evka's track abilities.
 		\item Build easy interactions with enum states as lift pull and collisions.
@@ -145,8 +146,44 @@
 		\end{itemize}
 		\item SetUp Avatar restrains. I.e Do not allow take knife from working area, do not put pasta into empty Pot. \ldots
 		\item To be added \ldots
+	
 		
 	\end{enumerate}
+	\subsection{Tools in the worlds}
+	In order to create a living representation of the world, all materials were splitted to different categories. Tools - knifes, spoons, and all cooking related. Ingridients - vegetables, meals, coffee, sugar, salt. Sources - Cups, Saucepans, Plates, Stoves. Their functionality follows same as in real world. \\
+
+	This approach was chosen not only for simple process logic. It can be used for a teaching purposes, to show patients how to act with different kinds of objects. \\
+	
+	$ Seazing\ all\ activiries\ were\ removed.\ They require\ carefull\ logic\ approach. $
+	
+	In terms of the tools, they exist independatly and EvKa watches over they state during entire process. They have to be alsways at particular area, can not be dropped and never must face to a person direction. Using a motion tracker those warning can be re-enabled. Cuurently, she just watch if it was dropped or not, and returns to origin location. \\
+	
+	Ingredients are the same as a tools, excepted that they can change their state during cooking process. They can be washed, cut, fried, frozen. Currently only few of those straits implemented. Depending on complexity of the tasks, these may be enabled. To unfroze meat, time calculates based on conditions around, vegetable can be washed after collision with water source. \\
+	
+	Sources are content for ingridients. Those are final stages for making food. After combining all ingridients, it calculates or sets time for cooking. After, Evka just monitors conditions and provides reminder in the cooking process. \\
+	
+	Those are basic tasks which person expect to do around kitchen. 
+	
+	\subsection{Evka}
+	In order to attract person attention and keep his attention occupaied, Evka received a human body, which acts as a support\\adviser around kitchen. Here abilities extend around entire kitchen, however as a person she located at place, which is on the view, but does not affects process around. She also acts as Audio Source, as basic interaction abilities like talking, greeting and idle sitting. Her abilities as a person can be extended, depending how living she must be. \\
+	
+	Currently, her voice is product of inbuild Windows or Mac Voice, it maybe not emotional, but contains general understanding of the tasks. This approach will make sure, that patients still exist around area and occupied with cooking process. If not - she will remind him or her.
+	
+	
+	One of the Evka's abilities is to point to the objects around. THis function is used in case if person gets lost around. it can be used by simple call. \ldots
+	\subsection{*Instruction}
+	
+	In order to demonstrate the process of easy creation of the new item in the kitchen, following instruction will be provided.\\
+	
+	First you have an area. Drop any item which you want to add to surrounding. Manipulate with sizes and add one of preexisted tags, $\left(\ or\ create\ a\ new\ one\ if\ necessary,\ it\ may\ require\ longer\ process\  \right) . $ \\
+	
+	Program will automatically apply colidors, rigidboidy and transform scripts. Take for example we want to add franpan an extra tool. After adding it to a world, it will be able to store content, which called ingridients for cooling. \\
+	
+	Second, create a receipt. Better if it will be stored somewhere accessible. Script named $receipts$ contains all current staff possible to cook. As an example, lets create a receipt for stir-fry mince with onion cooked on the olive oil. We assume that pasta already ready and it's not part of receipt. $ \left(such\ complex\ receipts\ will\ require\ more manipulation.  \right) $ Create and Array List with strings, which contains \{"oil", "cut onion", "mince", "mixed" \}. Last word will mean that content must be stirring with any object which can do it, like spoon. Time for cooking may be calculated automatically with formulas and room conditions, or can be parsed and presented. \\
+	
+	Add all this information to following structure and pass to the methods. By default EvKa's dialogs will be set as a simple remainders, they also can be modified from this call. Basically this is a proccess of basic cooking. All other processes followed with other instructions. \ldots
+	
+	
 	
 	
 \section{Conclusion}	
