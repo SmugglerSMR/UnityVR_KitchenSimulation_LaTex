@@ -101,9 +101,14 @@
 \renewcommand*\contentsname{Table of Contents}
 \tableofcontents
 \listoffigures
-\newpage
+\section{List of abbreviations}
+	Evka \\
+	VR \\
+	VI \\
+	etc.
+\newpage	
 \section{Executive Summary}
-	TOBE WRITEN I BELIEVE
+	This report contains result of two months research and developed Virtual Intelegenece using Unity Game Engine. This work was focused on designing behaviour of Avatar who will control provided surrounding. In specific, it focuses on kitchen area, with all included tools and user manipulations. Its foundation lies on Dr Ross Brown research and \textbf{Indeva} training lessanse with people who has Intelectual disabilities. Using provided VR Gear sets and controlers, it must end up as a safe training ground, putting aside all danger. In future, this Avatar must be adapted to Virtual Reality and, in long future, to Augemented one.
 %===================================================%
 %													%
 %===============Project Overview====================%
@@ -168,44 +173,23 @@
 	This project aimed to progress this idea and bring it as close to reality as possible. \\
 	
 \section{Methodology}	
-	\begin{enumerate}
-		\item Establish Unity on Home Windows Machine. Google drive used as source control. - Unity 2017.2.0f3 - DONE
-		\item Use Unity Assert Store to establish sort of kitchen environment. Kitchen asset and creation kit. MCS Female for body. RT-Voice PRO. Meximio animation.  - DONE
-		\item Draw VI model and place in the kitchen.  - DONE
-		\item Build one work flow hierarchy with Evka's feedback. \textbf{Camera view track}  - DONE
-		\item Build an easy interactions with enum states as lift pull and collisions. - NOT an EASY
-		\begin{itemize}
-			\item Knife - Lift, Pull, Cut. Safe state, Danger State.  - DONE
-			\item Kitchen plate - Cooled, Heating, Hot. Safe state, Danger State.  - DONE
-			\item Pan/Pot - Empty, filled. Cooled, Hot.  - DONE
-			\item Spoon - Cooking Tool.  - DONE
-			\item Glass/Plate/Shell/Fridge - Storage.  - DONE (Partially)
-		\end{itemize}
-		\item Give player tho hands - keyboard/mouse. - ONE IS ENOUGH
-		\item Set Cooking ingredients.  - DONE
-		\begin{itemize}
-			\item Vegetables - Whole, Cutted. Durty, Clean. Old, Fresh.  - DONE
-			\item Meat - whole, cutted, mean. Frozen, normal.  - DEMO
-			\item Rice - Dry, Cleaned. Empty/ Full. - ???
-			\item Past - Empty/ Full.  - DONE
-			\item Potatoes - Dry, Cleaned. Empty/ Full. - NOPE
-			\item Oil - Filled, Empty.  - DONE
-			\item Butter/Salt/Paper/Seasons - Yes or Null. - NOPE
-		\end{itemize}
-		\item SetUp Avatar restrains. I.e Do not allow take knife from working area, do not put pasta into empty Pot. \ldots  - DONE	
-		
-	\end{enumerate}
+	Generally, whole project must become one smart game. Moreover, it must be easily adaptable to change of rules, environment and gaming platform. The most important and hardest part is to develop logic of this world. It will be started as one small PC game with one of Gaming Engines, which later can be transformed to VR. \\
 	
-	\subsection{*Development Environment}
-	GEARS***\\
-	Entire designing work will be performed using Unity Game Engine. Those tools allow build realistic environment, which in future may be transformed to any supported hardware, including VR. Work will be performed on Object-Oriented C\# language. Unity has own Assets Store, which contains some presets and others programmers work. In project such as this, it may become the most handy tool.
+	Creating an environment, a real kitchen, will not be hard process. Implementation of tools like spoon or knife, and someone who will keep an eye on everything and inform of any danger, this is real challenge. First, it's to create avatar, give her a body, voice. Then, she must be touch what each tool is, what it does and what sort of danger it presume. This also includes list of food products, bottles. At last, she have to understand what happens when some of the tool combined and what result may give. For example, what pasta can be cooked by putting water to pan, make it boil and add pasta. After some amount of time, food is ready. \\
+	
+	From design point of view, it will be wise add to avatar some personality, body, voice and manners of speech. Resulted prototype will become easily transferable from one project to another, so that her abilities may be used in the projects, which QUT already performed with other students. \\
+	
+	\subsection{Development Environment}
+	Entire designing work will be performed using Unity Game Engine. Those tools allow build realistic environment, which in future may be transformed to any supported hardware, including VR. Work will be performed on Object-Oriented C\# language. Unity has own Assets Store, which contains some pre-sets and others programmers work. In project such as this, it may become the most handy tool. \\
+	
+	After, it has to be transformed to VR engine and properly tested on Samsung VR Gear. This part is beyond current research. It will require only minor redesign reimplementation, the key is to build workable prototype. \\
+	
 	\subsection{User Manipulators}
 	Surrounding manipulation was meant to go through several different implementing processes.\\	
 	At current stage, our First Person Player is supported with one hand as a mouse manipulator. They were used for testing purposes and will be reimplemented to work out with more difficult controllers. \\
 	
 	Next, it should have been transferred to the controllers use. Instead of having mouse or knife, person will have VR joystick, which will represent his hands. \ldots \\
 	
-	\textbf{ ADD AS FUTURE WORK. At final product, there will be no reasons adding controllers to persons hand, instead cameras or Kinect tool will track objects around and their movements.  Players must have augmented reality set in order to see an avatar, if necessary and all other warning, visual and audio.\\}
 	
 	
 	\subsection{Tools in the worlds}
@@ -230,11 +214,55 @@
 	
 	Those are basic tasks which person expect to do around kitchen. \\
 	
+	\textbf{	Calculating temperature around} \\
+	Considering that it happens in Virtual World, there is a possibility to simulate certain events. Same way, using some school physics formula, it allows to calculate cooking time, based on room conditions~\eqref{eqn:eqlabel}. 
+	
+
+	\begin{flalign} \label{eqn:eqlabel}
+		TT & = 100 * ((v * 8.33 * 453.59237) * (((5 / 9) * (ET - 32)) - ((5 / 9) * (ST - 32))) / (eg * 0.238845896628 * eff)) / 60; & \\
+		Where, & \\			
+		TT & = Time\ to\ Temperature & \\
+		v & = Volume\ (Gallons) & \\
+		ET & = End\ Temperature\ (Fahrenheit) & \\
+		ST & = Start\ Temperature\ (Fahrenheit) & \\
+		eff & = Efficiency & \\
+		eg & = Energy \\
+	\end{flalign}
+
+
 
 	
-	RTVoive capable of using Windows Mac voice and MarryTTS - adaptive served voice. Allows change sharpens, type and speed of voice acting, if necessary
+	RTVoive capable of using Windows Mac voice and MarryTTS - adaptive served voice. Allows change sharpens, type and speed of voice acting, if necessary. All lines are stored in one particular C\# script. Which means can be easily retranslated or rewriten. 	
 	
-	\subsection{Evka}
+	\subsubsection{Knife and cutting tools}
+	Figure~\ref{fig:knife_spoon} represents implemented examples of cutting tools. Their main property for this game is to collide with food type objects and change their states. For example, by colliding knife with onion, it will become "cut onion", which is an ingredient for the receipt. \\
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/knife_spoon}
+			\caption{Knifes}
+			\label{fig:knife_spoon}
+		\end{figure}
+	One of implemented properties, is that knife never should leave working area. By drooping knife on the floor, will make it as possible source of danger. For now, Eva will inform it, and place it back where belongs. In addition, knife never should leave coocking table. It will be inappropriate if knife will end up somewhere out of kitchen. Eva will simply lose from control view. However, it is not a problem insight the game, but may be dangerous in real life. Moreover,it is restricted to collide knife with leaving being like person or Virtual Avatar. If with Evka, it will end up with simple warning, person may injure himself. This action will completely drop Eva's mood and stop everything what's been happening around. \\
+	In order to approach task management problem, such as knife can not be used as spoon, knife hasn't been provided with Mixing tag. In other words, if Eva notice that person mixes a coffee with knife, instead of spoon, she will not consider coffee complete. This idea should give a person understanding that different task must be managed with certain tool. \\
+	\subsubsection{Meat and Vegetables}
+	Ingredients, shown of Figure~\ref{fig:food} does not have anything particular except the tag and different states. Currently, the most stable and appropriate way to change states of Vegetables is to apply certain script to each type. \\
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/food}
+			\caption{Knifes}
+			\label{fig:food}
+		\end{figure}
+	In order to universalise entire approach with vegetables, it will be wise to create separate independent structure, in which states of the product will simply change in one particular order. Idea was left for future work. \\
+	\subsubsection{Cooking Pans}
+	Figure~\ref{fig:pans} represents implemented pans in the game. They serve some sort of container who stores objects which were collided with it. After, Eva can compare them and give certain output, and start timer. In addition, pans also can be source of danger. Spilling the content will lead to the loos of ingridients and starts process again. However, it is not equaly dangerous as a knife, and accidents can happen in working area, Eva will consider it, but situations still affects her mood.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/pans}
+			\caption{Cooking Pans}
+			\label{fig:pans}
+		\end{figure}
+	
+	\subsubsection{Evka}
 	In order to attract person attention and keep his mind occupied, Evka received a human body, which acts as a support\\adviser around kitchen. Her abilities extend at entire area, however as a person she located at place, which is  view, but does not affect process around. She also acts as Audio Source, as basic interaction abilities like talking, greeting and idle sitting. Her skills as a person can be extended, depending how living she must be, right now she capable only to track persons view and call for his attention, he gets distracted. \\
 	\begin{figure}[H]
 		\centering
@@ -282,7 +310,7 @@
 		\label{fig:animat}
 	\end{figure}
 	
-	\subsection{*Instruction. Use lots of images her}
+	\subsection{Instruction and Guidance}
 	
 	In order to demonstrate the process of easy creation of the new item in the kitchen, following instruction will be provided.\\
 	
@@ -362,38 +390,45 @@
 	
 	If cooking process requires other manipulation with object like changing a state from solid to messed, it can be performed through modefying a loop with paricular code \ldots \ldots If process requires harder manipulation, then appropriate scripts must be created and added in the same loop as Game Component. 
 	
-	\subsubsection{Knife, pan.. etc.}
-	
-	\subsection{?Logic of the world. *Strips algorithm}
+	\subsection{Worlds Logic.}
 	In order to understand processes which occurs around, it is better to view them separately. As it's been already discussed, it consist of 3 types of tool. Every tool type monitored by their own independent rules, which can not be broken. This designed to keep user in certain boundaries then he is not in the process of cooking something particular. This approach also allow perform some multitasking operations. All of them are united by one unique cooking process. The example approach, which was mentioned above, showed how logic is united to perform one particular task. However, EvKa can leave focus on user reaction, and focus on the states of objects around. If their condition may cause any danger - certain response will be called.
 	
 	Response of EvKa's reaction depends on her level of the mood. This approach makes her feel a bit as living being, and as soon as her patience runs out, she will call for assistance from supervisor.
-	
+	\subsubsection{Strips algorithm}
+	\subsubsection{Temperature \& Time Calculation}
+	\subsubsection{Dialogues System}
 	
 \section{Conclusion}
-\begin{enumerate}
-	\item What was achieved? - Environment designed, algorithm adaptive, dialogues created.
-	\item Portability. - Extract pachage, prefab..
-	\item Augemented reality research
-	\item What has become with Evka
-\end{enumerate}
+	\subsection{Results}
+	\begin{enumerate}
+		\item What was achieved? - Environment designed, algorithm adaptive, dialogues created.
+		\item Portability. - Extract pachage, prefab..
+		\item Augemented reality research
+		\item What has become with Evka
+	\end{enumerate}
 	As a result of two months research and development, design wend through several modifications. At the end, resulting product came to VI, which able track state of the objects around, give certain feedback and serve as virtual assistant. Logic behind is easily adaptable and can be reused for other tasks around kitchen. This will totally depend on clients desire and persons abilities. \\
 	
 	However, this is not  guaranty total independence, but it will a first step to something greater in the future. \\
+	\subsection{Ideas for future}
 	
-
-\section{?Proposal. Do I even need to copy it here?}	
-\section{Acknowledgements (other's assets)}	
-	Virtual environment was created using several different assets form Unity Assets Store. THose are...
+	\textbf{ ADD AS FUTURE WORK. At final product, there will be no reasons adding controllers to persons hand, instead cameras or Kinect tool will track objects around and their movements.  Players must have augmented reality set in order to see an avatar, if necessary and all other warning, visual and audio.\\}
 	
-	\large kitchen Creation Kit, Kitchen Asset, MORPH3D - Evka's body and Clothes (Cyria), RTVoice\\	
+\section{Acknowledgements}	
+	Virtual environment was created using several different assets form Unity Assets Store. THose credits belongs to: 
+	\begin{enumerate}
+		\item Kitchen Creation Kit - Adding environment tools
+		\item Kitchen Asset - Creating kitchen environment
+		\item MORPH3D - Evka's body and Clothes based on model of (Cyria).
+		\item RTVoice - Adds Voice to Avatar.
+	\end{enumerate}
+	
+	In addition, I want to thank VRES for providing this opportunity, along side with SEF. Great thanks Dr Ross Brown, for guiding through entire research last two months. \\	
 	
 %===================================================%
 %													%
 %============Bibliography and refferencing==========%
 %												    %
 %===================================================%
-
 \newpage
 \begin{flushleft}
 \bibliographystyle{referencing/IEEEtran}
