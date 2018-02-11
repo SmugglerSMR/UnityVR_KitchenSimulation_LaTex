@@ -101,13 +101,19 @@
 \tableofcontents
 \listoffigures
 \section{List of abbreviations}
-	EvKa - Enhance Virtual Kitchen Assistance (Eva) \\
-	VR - Virtual Reality \\
-	VI - Virtual Intelligence \\
-	etc.
+	\begin{enumerate}
+		\item EvKa - Enhance Virtual Kitchen Assistance (Eva) 
+		\item VR - Virtual Reality 
+		\item VI - Virtual Intelligence 
+		\item API - Application Programming Interface 
+		\item GUI - Graphical User Interface
+		\item STRIPS - The Standford Research Institute Problem Solver  
+	\end{enumerate}
+	
+
 \newpage	
 \section{Executive Summary}
-	This report contains result of two months research and developed Virtual Intelegenece using Unity Game Engine. This work was focused on designing behaviour of Avatar who will control provided surrounding. In specific, it focuses on kitchen area, with all included tools and user manipulations. Its foundation lies on Dr Ross Brown research and \textbf{Indeva} training lessanse with people who has Intellectual disabilities. Using provided VR Gear sets and controlers, it must end up as a safe training ground, putting aside all danger. In future, this Avatar must be adapted to Virtual Reality and, in long future, to Augmented one.
+	This report contains result of two months research and process of developing Virtual Intelligence using Unity Game Engine. Entire work was focused on designing behaviour of Avatar who will watch and control provided surrounding area. In specific, it focuses on kitchen area, with all included tools and user interactions. Its foundation lies on Dr Ross Brown research and Endeavour training lessons with people who suffer from Intellectual Disabilities. Using provided VR Gear sets and controllers, it must end up as a safe training ground, putting aside all danger. In future, this Avatar must be adapted completely to Virtual Reality and, in long future, to Augmented one.
 %===================================================%
 %													%
 %===============Project Overview====================%
@@ -119,21 +125,21 @@
 			
 		Virtual assistant was given a name \textit{Evka} - \textit{Enhanced Virtual Kitchen Assistant} \footnote{from a Czech language - Eva}. Her name can be translated as Eva, which will be used in majority of cases. Using a hand trackers, tool markers, property or scanners and area content, she will be able decide the best possible way to cook menu, track user activities in order not to harm anyone and track the state of cooking process with level of heat, time and user actions. \\	
 		
-		At current stage Eva is able to communicate with her voice using "voice asset". Her responses are generated based on user actions. Original idea was to develop Question-Answer Virtual Intelligent environment. However, after going through limitation of the project, users ability and current level of technologies, idea was postponed to better times. \\	
+		At current stage, Eva is able to communicate with her voice using "voice asset". Her responses are generated based on user actions. Original idea was to develop Question-Answer Virtual Intelligent environment. However, after going through limitation of the project, users ability and current level of technologies, idea was postponed to better times. \\	
 		
-		As a result, Eva is able to use Unity Engine Kitchen environment around, which were marked with a tag depending on, which type of tool it belongs. Her dialogues stored in a tree hierarchy and changes depending on user actions. In the mean time, player has the ability to manipulate with object using controllers, represented as mouse and keyboard. \\
+		As a result, Eva is able to use Unity Engine Kitchen environment around, which were marked with a particular tag for each type of tool. Her dialogues stored in a tree hierarchy and changes depending on user actions. In the mean time, player has the ability to manipulate with object using controllers, represented as mouse and keyboard. \\
 		
 	\subsection{Report Aim}
-		Report is aimed to describe what limits can be overcome using game engine. It will present training idea and how easily constructed and adaptive. In the world, where Artificial Intelligence started to take place, this research may prove useful to other similar goals.\\
+		Report is aimed to describe what limits can be overcome using game engine. It will present simple training ideas, how easily they can be constructed and adapted to different platform. In the world, where Artificial Intelligence started to take place, this research may prove useful to other similar goals.\\
 		
-		As a result, it will contain achieved demonstration and some basic manipulation. In addition, an API document will be generated and, applied to Methodology part. \\
+		As a result, it will contain achieved demonstration and some basic manipulation. In addition, an API document will be generated and, applied as result of development. \\
 	
 \section{Background research}	
 	\subsection{Problems and Solutions}
-		The foundation for research was established by supervisor of the project, based on his article~\cite{quteprints100187} about Embed of VR content in life training. It highlighted several concerns, which will be difficult to overcome and suggested several solution. One which closely related to correct research are followed: \\	
+		The foundation for research was established by supervisor of the project, based on his article~\cite{quteprints100187} about \textit{Embed of VR content in life training}. It highlights several concerns, which will be difficult to overcome and suggested several solution. Following problems are closely related to research: \\	
 		\begin{enumerate}
 			\item People with intellectual disabilities finding use of keyboard and mouse harder than using joysticks. Based on P. J. Standen~\cite{control} research data, it will be logical to conclude that interaction problem must be solved within virtual world, rather than persons' abilities.
-			\item Virtual training environment must be processed with guides. However according to Jen K.Y. Wu~\cite{WU20058} research data people not always react on messages or warnings around them. Use of simple Graphical User Interface (GUI) must be limited as much as possible, due to its' ineffectiveness. However, some research on people with disabilities highlighted that person may be very precise with following instructions or commands if it's given by a person.
+			\item Virtual training environment must be processed with guides. However according to Jen K.Y. Wu~\cite{WU20058} research data people not always react on messages or warnings around them. Use of simple Graphical User Interface (GUI) must be limited as much as possible, due to its' ineffectiveness. However, some research on people with disabilities highlighted that person may be very precise with following instructions or commands if it's given by a live person.
 			\item Environment itself may cause learning challenges. Even for person without any difficulties, it is usually a bit complicated to switch between virtual world to real. Some of skills practised on simulator, are not always easily achieved in practice. As an example may be a dangerous driving test for first time drivers. That is why driving instructors are used as a guiders in both situations. With their support person may overcome fear and learning skills along side precaution instincts.
 		\end{enumerate}
 		Based on such limitation, solution was yet closer than anyone can think. First and the most complicated one - controllers. There are two approaches, first is Virtual Reality itself. Modern VR glasses requires wearing a helmet with two VR controllers. This way, hands will be processed and displayed in virtual reality like their own. This way will require some training with VR, but it less limited than keyboard \& mouse and give person freedom of view and hand movements. \\
@@ -141,28 +147,28 @@
 		Second approach is Augmented Reality. It will require specially established kitchen area with several sensors around and modified VR glasses. Now, person will be in the familiar area, but VI will be able to recognise objects around, draw video projection on the glasses and modify with own images, highlighting any other information. With this approach, persons view is free from any controllers; tools like knife, spoon, water bottle or saucepan are tracked by sensors around.\\
 		Both solutions are similar to each other with own pros and cons. The goal is to develop universal solution. \\
 		
-		Second problem is the idea of VI who watches over environment, it also must act as adviser or like people used to say a virtual friend. The whole reason for VI having a body, voice, personality is a part of training program. Person must learn to trust that VI, so that words and tasks will make a sense for person. If people with disabilities have problems with focusing their attention on something particular, then VI person may help to overcome this dis-balance and enhance his abilities. This approach is much more complicated than it sounds, in order to create believable behaviour will take much higher computational efforts. Therefore, research focused on creating close demonstration. \\
-		
-		\textbf{Third problem is something unclear from human part of view. This will be hardly hardware problem, than personal abilities. To create an environment which will suit every persons need based on his attitudes will go far ahead modern years, from physical and physiological point of view. Currently, idea was focused on some particular group of people, which were trained under certain program and may achieve same goals.} \\
+		Second problem is the idea of VI who watches over environment, it also must act as adviser or like people used to say a virtual friend. The whole reason for VI having a body, voice, personality is a part of training program. Person must learn to trust that VI, so that words and tasks will make some sense. If people with disabilities have problems with focusing their attention on something particular, then VI person may help to overcome this dis-balance and enhance their abilities. This approach is much more complicated than it sounds, in order to create believable behaviour will take much higher computational efforts. Therefore, research focused on creating close demonstration. \\		
 	
 	\subsection{Current achievements}		
 		Since developing Virtual Reality and related VR Gears, progress has not been stopped. Several different companies around the glob had their own innovations at current research area. Some of them may have particular interest. \\
-		So called Osso VR already perform transformation of surgical training to Virtual Reality.~\cite{OssoVR} From a video demonstration, it is possible to see how simple but in a same time precise simulation was build. Maybe it is not suited for low accurate tasks, but to give some basic life training, without threatening someone live, this application is irreplaceable. \\	
+		
+		So called Osso VR has already perform transformation of surgical training to Virtual Reality.~\cite{OssoVR} From a video demonstration, it is possible to see how simple, but in a same time precise simulation was build. Maybe it is not suited for low accurate tasks, but to give some basic life training, without threatening someone live, this application is irreplaceable. \\	
 		If Osso VR created an environment, student developers from Project Myron~\cite{Myron} offered an impressive tools to interact in Virtual Reality. Their hand controllers are able to track up to every finger move and recreate in VR. This pair of gloves may solve interaction problem, which will make training process much realistic and memorable. \\
+		
 		Currently in Australia, people from Endeavour Foundation~\cite{Endeav} are focused on providing basic live training to people with Intellectual Disabilities. This research was commenced by their experience and requirements were provided by them as well. \\
 		
-		However, despite all research results, this project would not even started without background experience. Australian based company MultiCap~\cite{Multicap} showed that robotics may become solution to brake difference between healthy and people with disabilities. They robot an humanoid with ability to talk, listen and use gestures to act as human. This robot was supposed to teach children with autism through some basics tasks. He was encouraging person to act with his voice and gestures to play some sort of games. Children were more than interesting to such unusual company. Robot attracted their interest in new technologies. \\		
+		However, despite all research results, this project would not even started without background experience. Australian based company MultiCap~\cite{Multicap} showed that robotics may become solution to brake difference between healthy and people with disabilities. Their robot - an humanoid with ability to talk, listen and use gestures to act as human. He\footnote{Robot name Body, provided by Aldebaran company.} was supposed to teach children with autism through some basics tasks. Robot was encouraging person to act with his voice and gestures to play some sort of games. Children were more than interesting to such unusual company. Robot attracted their interest in new technologies. \\		
 		Overall, results of Meir Lotan research~\cite{LOTAN2009229} provided a good possibilities for success of results.\\	
 	
 	\subsection{Development approach}
-		Starting point from a design point of view is choosing a head start. The best, which possible to think for this kind of tasks are Video Games. In the most popular gaming Library called Steam (make reference later), developers created a Job simulation, one of them is actual cooking in painted kitchen. However, this game is focused only for entertainment', and hardly can be taken as training program due to unserious environment. Another one is more beautiful from design point of view, but difficult for persons with intellectual disabilities. Despite that environment look real, beautiful and flashy, interaction tools are suffered from low performance. \\
+		Starting point from a design point of view is choosing a head start. The best, which possible to think for this kind of tasks, are Video Games. In the most popular gaming Library called Steam~\cite{Steam}, developers created a Job simulation, one of them is actual cooking in painted kitchen. However, this game is focused only for entertainment', and hardly can be taken as training program due to unserious environment. Another one is more beautiful from design point of view, but difficult for persons with intellectual disabilities. Despite that environment look real, beautiful and flashy, interaction tools are suffered from low performance. \\
 		Main drawbacks why whose game does not suit for project goal are GUI environment, game avatars are low on assistance and level design that far from reality. Overall environment does not adapts or reacts to user manipulation, however they provide nice ideas for game design approach. \\
 		This project aimed to progress those developments and bring them as close to reality as possible. \\
 	
 \section{Methodology}	
 	Generally, whole project must become one smart game. Moreover, it must be easily adaptable to change of rules, environment and gaming platform. The most important and hardest part is to develop logic of this world. It will be started as one small PC game with one of Gaming Engines, which later can be transformed to VR. \\
 	
-	Creating an environment, a real kitchen, will not be hard process. Implementation of tools like spoon or knife, and someone who will keep an eye on everything and inform of any danger, this is real challenge. First, it's to create avatar, give her a body, voice. Then, she must be touch what each tool is, what it does and what sort of danger it presume. This also includes list of food products, bottles. At last, she have to understand what happens when some of the tool combined and what result may give. For example, what pasta can be cooked by putting water to pan, make it boil and add pasta. After some amount of time, food is ready. \\
+	Creating an environment, a real kitchen, will not be hard process. Implementation of tools like spoon or knife, and someone who will keep an eye on everything and inform of any danger, this is real challenge. First, it's to create avatar, give her a body, voice. Then, she must be touch what each tool is, what it does and what sort of danger it presume. This also includes list of food products, bottles. At last, she have to understand what happens when some of the tool combined and what result may give. For example, pasta can be cooked by putting water to pan, make it boil and add pasta itself. After some amount of time, food is ready. \\
 	
 	From design point of view, it will be wise add to avatar some personality, body, voice and manners of speech. Resulted prototype will become easily transferable from one project to another, so that her abilities may be used in the projects, which QUT already performed with other students. \\
 	
@@ -191,8 +197,6 @@
 		In order to create a living representation of the world, all materials were split to different categories. Tools - knifes, spoons, and all cooking related. Ingredients - vegetables, meals, coffee, sugar, salt. Sources - Cups, Saucepans, Plates, Stoves. Their functionality follows same as in real world. \\
 		This approach was chosen not only for simple process logic. It can be used for a teaching purposes, to show patients how to act with different kinds of objects. \\
 		
-		$ Seazing\ all\ activities\ were\ removed.\ They\ require\ carefull\ logic\ approach. $
-		
 		In terms of the tools, they exist independently and EvKa watches over their state during entire process. They have to be at particular area, can not be dropped and never must face to a person direction. Using a motion tracker those warning can be re-enabled. Currently, she just watch if it was dropped or not, and returns to origin location. \\
 		
 		Ingredients are the same as a tools, excepted that they can change their state during cooking process. They can be washed, cut, fried, frozen. Currently only few of those straits implemented. Depending on complexity of the tasks, these may be enabled. To unfreeze meat, time calculates based on conditions around, vegetable can be washed after collision with water source. \\
@@ -202,7 +206,7 @@
 		Those are basic tasks which person expect to do around kitchen. \\
 	
 		\subsubsection{Calculating temperature around}
-			Considering that this happens in Virtual World, there is a possibility to simulate certain events. Same way, using some school physics formula, it allows to calculate cooking time, based on room conditions~\eqref{eqn:eqlabel}. 	
+			Considering that all this happens in Virtual World, there are possibility to simulate certain events. Same way, using some school physics formula, it allows to calculate cooking time, based on room conditions. %~\eqref{eqn:eqlabel}. 	
 		
 			\begin{flalign} \label{eqn:eqlabel}
 				TT & = 100 * ((v * 8.33 * 453.59237) * (((5 / 9) * (ET - 32)) - ((5 / 9) * (ST - 32))) / (eg * 0.238845896628 * eff)) / 60; & \\
@@ -213,9 +217,7 @@
 				ST & = Start\ Temperature\ (Fahrenheit) & \\
 				eff & = Efficiency & \\
 				eg & = Energy \\
-			\end{flalign}	
-			
-			RTVoive capable of using Windows Mac voice and MarryTTS - adaptive served voice. Allows change sharpens, type and speed of voice acting, if necessary. All lines are stored in one particular C\# script. Which means can be easily retranslated or rewriten. \\ 	
+			\end{flalign}					
 	
 		\subsubsection{Knife and cutting tools}
 			Figure~\ref{fig:knife_spoon} represents implemented examples of cutting tools. Their main property for this game is to collide with food type objects and change their states. For example, by colliding knife with onion, it will become "cut onion", which is an ingredient for the receipt. \\
@@ -225,7 +227,7 @@
 					\caption{Knifes}
 					\label{fig:knife_spoon}
 				\end{figure}
-			One of implemented properties, is that knife never should leave working area. By drooping knife on the floor, will make it as possible source of danger. For now, Eva will inform it, and place it back where belongs. In addition, knife never should leave cooking table. It will be inappropriate if knife will end up somewhere out of kitchen. Eva will simply lose from control view. However, it is not a problem insight the game, but may be dangerous in real life. Moreover,it is restricted to collide knife with leaving being like person or Virtual Avatar. If with Evka, it will end up with simple warning, person may injure himself. This action will completely drop Eva's mood and stop everything what's been happening around. \\
+			One of implemented properties, is that knife never should leave working area. Drooping knife on the floor, will make it as possible source of danger. For now, Eva will inform it, and place it back where belongs. In addition, knife never should leave cooking table. It will be inappropriate if knife will end up somewhere out of kitchen. Eva will simply lose from control view. However, it is not a problem insight the game, but may be dangerous in real life. Moreover,it is restricted to collide knife with leaving being like person or Virtual Avatar. If with Evka, it will end up with simple warning, person may injure himself. This action will completely drop Eva's mood and stop everything what's been happening around. \\
 			In order to approach task management problem, such as knife can not be used as spoon, knife hasn't been provided with Mixing tag. In other words, if Eva notice that person mixes a coffee with knife, instead of spoon, she will not consider coffee complete. This idea should give a person understanding that different task must be managed with certain tool. \\
 			
 		\subsubsection{Meat and Vegetables}
@@ -265,7 +267,7 @@
 				\label{fig:evkasit1}
 			\end{figure}			
 			
-			Currently, her voice is product of inbuilt Windows or Mac Voices, it maybe not emotional, but contains general understanding of the tasks. This approach will make sure that patients are still occupied with cooking process. If not - she will remind him or her. \\	
+			Currently, her voice is product of inbuilt Windows or Mac Voices, it maybe not emotional, but contains general understanding of the tasks. RTVoive asset is capable of using MarryTTS as well - adaptive served voice. Allows change sharpens, type and speed of voice acting, if necessary. All lines are stored in one particular C\# script. Which means can be easily re-translated or rewritten. This approach will make sure that patients are still occupied with cooking process. If not - she will remind him or her. \\	
 			
 			Eva has a pre-sets of animation, which avatar expected to be performedm on Figure~\ref{fig:animat}. Process of installing them has no difference from any other unity projects. One of the Evka's abilities is to point toward objects around. This function is used in case if person gets lost around. She is able to remind patient to grab something, or use it toward vegetables or saucepan. Waiving was used for simple greeting at the beginning, however it may become useful if person gets lost around Virtual Reality. Moreover, Eva's body used as Audio Source to recreate illusion of real person. \\
 			\begin{figure}[H]
@@ -293,6 +295,7 @@
 				\caption{Supported Animation}
 				\label{fig:animat}
 			\end{figure}
+			
 	
 	\subsection{Instruction and Guidance}	
 		In order to demonstrate the process of easy creation of the new item in the kitchen, following instruction will be provided.\\
@@ -311,7 +314,7 @@
 				\includegraphics[width=0.85\linewidth]{images/add_onion_code}
 				\caption{Code for onion}
 			\end{subfigure}		
-			\caption{Evka}
+			\caption{Virtual Onion}
 			\label{fig:add_object}
 		\end{figure}
 		
@@ -322,18 +325,18 @@
 			\begin{subfigure}{0.45\textwidth}
 				\centering
 				\includegraphics[width=1\linewidth]{images/franpan}
-				\caption{Evka's idle sitting}
+				\caption{Fran pan before run}
 			\end{subfigure}
 			\begin{subfigure}{0.45\textwidth}
 				\centering
 				\includegraphics[width=1\linewidth]{images/franpan_script}
-				\caption{Evka's idle talking}
+				\caption{Fran pan after run}
 			\end{subfigure}		
-			\caption{Evka}
+			\caption{Virtual Pan}
 			\label{fig:add_franpan}
 		\end{figure}
 		
-		Second, create a recipe. Better if it will be stored somewhere accessible. Script named $receipts$ contains all current staff possible to cook. As an example, lets create a receipt for stir-fry mince with onion cooked on the olive oil. We assume that pasta already ready and it's not part of receipt. $ \left(such\ complex\ receipts\ will\ require\ more\ manipulation.  \right) $ Create and Array List with strings, which contains oil, onion, mince, mixed. Last word will mean that content must be stirring with any object which can do it, like spoon. Time for cooking may be calculated automatically with formulas and room conditions, or can be parsed and presented, it will be showed later. \\
+		Second, create a recipe. Better if it will be stored somewhere accessible. Script named $receipts$ contains all current staff possible to cook. As an example, lets create a recipe for stir-fry mince with onion cooked on the olive oil. We assume that pasta already ready and it's not part of recipe. $ \left(such\ complex\ recipe\ will\ require\ more\ manipulation.  \right) $ Create and Array List with strings, which contains oil, onion, mince, mixed. Last word will mean that content must be stirring with any object which can do it, like spoon. Time for cooking may be calculated automatically with formulas and room conditions, or can be parsed and presented, it will be showed later.
 		
 		\lstset{style=sharpc}
 		\begin{lstlisting}
@@ -354,10 +357,9 @@
 		}
 		\end{lstlisting}
 		
-		Sooner or later it will be noticed that mince does not actually exist in the world either. However, this is not a difficult process to perform. Drop any item which you want and add tag mince, same one you used in receipt and perform same manipulation as with onion. Later it will be shown how to add different states of mince. As soon as collision will be performed with pan, object will be considered to be added to container. \\
+		Sooner or later it will be noticed that mince does not actually exist in the world either. However, this is not a difficult process to fix. Drop any item which you want and add tag "mince", same one you used in receipt and perform same manipulation as with onion. Later it will be shown how to add different states of mince. As soon as collision will be performed with pan, object will be considered to be added to container. \\
 		
-		The last step is to perform actual cooking process. In the main script, following lines must be added on top of other processes. How this scripts perform work is written in API, but long story short, it must set what to cook by adding receipt, where cooking must be performed, and what Eva must say then cooking started or there some problems with ingredients. Those lines are optional, it used in case if something else must be performed after cook. Timer accepts condition of the room, plate etc. User is free to set own time.
-		
+		The last step is to perform actual cooking process. In the main script, following lines must be added on top of other processes. How this scripts perform work is written in API, but long story short, it must set what to cook by adding receipt, where cooking must be performed, and what Eva must say then cooking started or there some problems with ingredients. Those lines are optional, it used in case if something else must be performed after cook. Timer accepts condition of the room, plate etc. User is free to set own time.		
 		\lstset{style=sharpc}
 		\begin{lstlisting}
 		stuffToMake.Add(new CookProcc {
@@ -370,36 +372,29 @@
 		});
 		\end{lstlisting}
 		
-		By default EvKa's dialogues will remainder about remaining time or other actions required, they also can be modified from this call or through timer set up. Basically this is a process of basic cooking. All other processes followed with other instructions. \ldots
+		By default EvKa's dialogues will remainder about remaining time or other actions required, they also can be modified from this call or through timer set up. Basically this is a process of basic cooking. All other processes followed with other instructions. \\
 		
-		\textbf{If cooking process requires other manipulation with object like changing a state from solid to messed, it can be performed through modifying a loop with particular code \ldots \ldots If process requires harder manipulation, then appropriate scripts must be created and added in the same loop as Game Component. }
+		If cooking process requires other manipulation with object like changing a state from solid to messed, it can be performed through modifying a loop with particular code \footnote{Look to API} If process requires harder manipulation, then appropriate scripts must be created and added in the same loop as Game Component.
 		
 	\subsection{Worlds Logic.}
 		In order to understand processes which occurs around, it is better to view them separately. As it's been already discussed, it consist of 3 types of tool. Every tool type monitored by their own independent rules, which can not be broken. This designed to keep user in certain boundaries then he is not in the process of cooking something particular. This approach also allow perform some multitasking operations. All of them are united by one unique cooking process. The example approach, which was mentioned above, showed how logic is united to perform one particular task. However, EvKa can leave focus on user reaction, and focus on the states of objects around. If their condition may cause any danger - certain response will be called.
 		
 		Response of EvKa's reaction depends on her level of the mood. This approach makes her feel a bit as living being, and as soon as her patience runs out, she will call for assistance from supervisor.
 		
-	\subsubsection{Strips algorithm}
-	Strips algorithm bla bla bla~\cite{STRIPS}
-	\subsubsection{Temperature \& Time Calculation}
+	\subsubsection{STRIPS algorithm}
+		STRIPS algorithm ~\cite{STRIPS} is a heart of the world. It used to design game agents actions, however it has other uses. In this game, algorithm was used to create tasks for a user to perform and a way for Evka to watch how states of the world changes, until they have been achieved. In order to make algorithm work, the entire world must be described as finite set of actions, which was already done by splitting world on categorises.
+
 	\subsubsection{Dialogues System}
+		Dialogue system has not found better way, rather than creating a file with all possible lines, and their pace holders. Game logic will use all those lines to create a tree hierarchy and run one by one. Depending on state of the Evkas' mood, dialogues can be quickly resettled to more aggressive version, which will demand person to follow guides. The use of that system is not completely clear, but it was used as an demonstration that this way is actually possible, and VI can be much liveable than originally anyone could think.
 	
 \section{Conclusion}
-	\subsection{Results}
+	\subsection{Results}		
+		As a result of two months research and development, design wend through several modifications. At the end, resulting product came to VI, which able track state of the objects around, give certain feedback and serve as virtual assistant. Logic behind is easily adaptable and can be reused for other tasks around kitchen. This will totally depend on clients desire and persons abilities. By extracting package or as a prefab, avatar can be moved to any other game. After, she will be set up automatically based on provided information. All work was performed with focus on computer game, and possibility of use in VR is only theoretical. Therefore, augmented reality has not been touched at all.\\
 		
-		\begin{enumerate}
-			\item What was achieved? - Environment designed, algorithm adaptive, dialogues created.
-			\item Portability. - Extract package, prefab..
-			\item Augmented reality research
-			\item What has become with Evka
-		\end{enumerate}
-		
-		As a result of two months research and development, design wend through several modifications. At the end, resulting product came to VI, which able track state of the objects around, give certain feedback and serve as virtual assistant. Logic behind is easily adaptable and can be reused for other tasks around kitchen. This will totally depend on clients desire and persons abilities. \\
-		
-		However, this is not  guaranty total independence, but it will a first step to something greater in the future. \\
+		Evka still has much clean up work to do. Everything will be depended on clients desire. STRIPS algorithm can be extended and bring something smart and interesting at the end. However, this is not  guaranty total independence, but it will a first step to something greater in the future. \\
 		
 	\subsection{Ideas for future}	
-		\textbf{ ADD AS FUTURE WORK. At final product, there will be no reasons adding controllers to persons hand, instead cameras or Kinect tool will track objects around and their movements.  Players must have augmented reality set in order to see an avatar, if necessary and all other warning, visual and audio.} \\
+		It may become interesting the possibility of use of some other researched tools to create an VR, which will become close to live as much as possible. If it success and entire project will it's place to help people, it will be moved to the world of augmented reality. It has really long road ahead, but at least it something to head on.
 	
 \section{Acknowledgements}	
 	Virtual environment was created using several different assets form Unity Assets Store. Those credits belongs to: 
@@ -410,7 +405,7 @@
 		\item RTVoice - Adds Voice to Avatar.
 	\end{enumerate}
 	
-	In addition, I want to thank VRES for providing this opportunity, along side with SEF. Great thanks Dr Ross Brown, for guiding through entire research last two months. \\	
+	In addition, I want to thank VRES for providing this opportunity, along side with SEF. Great thanks Dr Ross Brown and Dr Lorean, for guiding through entire research last two months. \\	
 	
 %===================================================%
 %													%
